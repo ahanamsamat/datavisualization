@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I am a 2nd year PhD Student in Public Policy and Political Economy. My research interests include social domestic policy, particularly education and family."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "EPPS 6356: Data Visualization",
+    "section": "",
+    "text": "This is a collection of all my assignments for Data Visualization"
+  },
+  {
+    "objectID": "assignment1.html",
+    "href": "assignment1.html",
+    "title": "assignment1",
+    "section": "",
+    "text": "Part (b)\nThis is an image generated with base R Code\ninstall.packages(c(“gsubfn”, “proto”, “tidyverse”))\nPart (c)\nThis image chooses poor colors to depict the data- the graph chooses light yellow which makes it hard to see the points, especially from a distance. It is helpful to consider the aesthetics of the graph when making it so the message can be clearly communicated to the audience."
+  },
+  {
+    "objectID": "assignment3.html",
+    "href": "assignment3.html",
+    "title": "assignment3",
+    "section": "",
+    "text": "owidall &lt;- read.csv(\"https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv\")\n\n\nowidall = owidall[!grepl(\"^OWID\", owidall$iso_code), ]\n\n\nowideu = subset(owidall, continent == \"Europe\" & as.Date(date) &lt; as.Date(\"2023-08-31\") & as.Date(date) &gt; as.Date(\"2020-01-01\"))\n\nylim = c(0, 6000)\n\n# Font\npar(family = \"serif\")\n\n# y axis: retrieved using chatgpt\ny_ticks &lt;- c(1000, 3000, 5000)\n\n# Plot\nplot(x = as.Date(owideu$date), y = owideu$new_deaths, pch = 16, col = \"#bf106d\", \n     xaxt = \"n\", yaxt = \"n\", ylab = \"\", xlab = \"\")\naxis.Date(1, at = as.Date(owideu$date), labels = format(as.Date(owideu$date), \"%Y-%m\"), las = 2, cex.axis = 0.6)  # X-axis\naxis(2, at = y_ticks, labels = y_ticks, cex.axis = 0.6)"
+  }
+]
